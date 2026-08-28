@@ -1,36 +1,30 @@
 import React, { useState } from 'react';
-import { EvidenceDocument, IssueCategory } from '../types';
+import { EvidenceDocument } from '../types';
 import { 
   FolderOpen, 
   Search, 
   Eye, 
   Download, 
   ShieldCheck, 
-  FileText, 
   AlertTriangle, 
   CheckCircle2, 
-  Scissors,
-  ExternalLink,
-  Quote,
-  Scale
+  ExternalLink, 
+  Quote
 } from 'lucide-react';
 
 interface DriveEvidenceVaultProps {
   evidenceDocs: EvidenceDocument[];
   selectedDoc: EvidenceDocument | null;
   onSelectDoc: (doc: EvidenceDocument | null) => void;
-  onOpenRedactTool: () => void;
-  isDriveConnected: boolean;
-  onConnectDrive: () => void;
+  onOpenRedactTool?: () => void;
+  isDriveConnected?: boolean;
+  onConnectDrive?: () => void;
 }
 
 export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
   evidenceDocs,
   selectedDoc,
   onSelectDoc,
-  onOpenRedactTool,
-  isDriveConnected,
-  onConnectDrive,
 }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -106,28 +100,10 @@ export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
           </div>
         </div>
 
-        {/* Action Controls */}
-        <div className="flex flex-wrap items-center gap-2.5">
-          <button
-            onClick={onOpenRedactTool}
-            className="flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-xl bg-[#181818] hover:bg-[#222222] text-slate-200 border border-[#262626] transition-all cursor-pointer"
-            title="Redact screenshots before sharing"
-          >
-            <Scissors className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Redact Screenshot Tool</span>
-          </button>
-
-          <button
-            onClick={onConnectDrive}
-            className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-xl border transition-all cursor-pointer ${
-              isDriveConnected
-                ? 'bg-emerald-950/80 border-emerald-800/60 text-emerald-300'
-                : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs border-indigo-500/40'
-            }`}
-          >
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>{isDriveConnected ? 'Drive Connected (/betaflux)' : 'Link Drive Storage'}</span>
-          </button>
+        {/* Static Status Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-xs font-semibold text-emerald-300 shadow-xs">
+          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span>Verified Primary Exhibits | PII Redacted</span>
         </div>
       </div>
 
