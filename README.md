@@ -18,4 +18,3 @@ View your app in AI Studio: https://ai.studio/apps/6ed22c94-2dc8-41fa-aa02-dd4f5
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
-# betaflux.watch

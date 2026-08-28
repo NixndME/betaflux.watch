@@ -82,7 +82,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 font-sans selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F8FAFC] font-sans selection:bg-[#FF3366] selection:text-white">
       {/* Top Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -109,24 +109,24 @@ export default function App() {
         {/* Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           {/* Quick Tab Switcher */}
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/80">
-            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none p-1 bg-slate-100 rounded-xl border border-slate-200/70">
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#262626]">
+            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none p-1.5 bg-[#141414] rounded-xl border border-[#262626]">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'overview'
-                    ? 'bg-white text-indigo-700 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
+                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
                 }`}
               >
                 Overview
               </button>
               <button
                 onClick={() => setActiveTab('financial')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'financial'
                     ? 'bg-red-600 text-white shadow-xs font-bold'
-                    : 'text-red-700 hover:text-red-900'
+                    : 'text-red-400 hover:text-red-300 hover:bg-red-950/40'
                 }`}
               >
                 <IndianRupee className="w-3.5 h-3.5" />
@@ -134,21 +134,21 @@ export default function App() {
               </button>
               <button
                 onClick={() => setActiveTab('battle')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'battle'
                     ? 'bg-indigo-600 text-white shadow-xs font-bold'
-                    : 'text-slate-700 hover:text-slate-900'
+                    : 'text-indigo-400 hover:text-indigo-300 hover:bg-indigo-950/40'
                 }`}
               >
-                <Flame className="w-3.5 h-3.5 text-red-500" />
+                <Flame className="w-3.5 h-3.5 text-amber-400" />
                 The Battle &amp; Chronicle
               </button>
               <button
                 onClick={() => setActiveTab('advisory')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'advisory'
-                    ? 'bg-amber-500 text-white shadow-xs font-bold'
-                    : 'text-amber-700 hover:text-amber-800'
+                    ? 'bg-amber-600 text-white shadow-xs font-bold'
+                    : 'text-amber-400 hover:text-amber-300 hover:bg-amber-950/40'
                 }`}
               >
                 <ShieldAlert className="w-3.5 h-3.5" />
@@ -156,10 +156,10 @@ export default function App() {
               </button>
               <button
                 onClick={() => setActiveTab('drive')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'drive'
-                    ? 'bg-white text-indigo-700 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
+                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
                 }`}
               >
                 <FolderOpen className="w-3.5 h-3.5" />
@@ -167,10 +167,10 @@ export default function App() {
               </button>
               <button
                 onClick={() => setActiveTab('timeline')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'timeline'
-                    ? 'bg-white text-indigo-700 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
+                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
                 }`}
               >
                 <Clock className="w-3.5 h-3.5" />
@@ -178,10 +178,10 @@ export default function App() {
               </button>
               <button
                 onClick={() => setActiveTab('scam_anatomy')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'scam_anatomy'
-                    ? 'bg-white text-indigo-700 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
+                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
                 }`}
               >
                 <Scale className="w-3.5 h-3.5" />
@@ -189,10 +189,10 @@ export default function App() {
               </button>
               <button
                 onClick={() => setActiveTab('social')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                   activeTab === 'social'
-                    ? 'bg-white text-indigo-700 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
+                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
                 }`}
               >
                 <Share2 className="w-3.5 h-3.5" />
@@ -212,7 +212,7 @@ export default function App() {
               />
 
               {/* The Battle & Struggle Chronicle */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <BattleStruggleChronicle
                   chapters={STRUGGLE_CHAPTERS}
                   evidenceDocs={evidenceDocs}
@@ -223,7 +223,7 @@ export default function App() {
               </div>
 
               {/* Public Caution Advisory for Clients and Candidates */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <PublicAdvisoryWarning
                   onExploreTimeline={() => setActiveTab('timeline')}
                   onExploreEvidence={() => setActiveTab('drive')}
@@ -232,7 +232,7 @@ export default function App() {
               </div>
 
               {/* Chronological Timeline */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <TimelineSection
                   milestones={TIMELINE_MILESTONES}
                   evidenceDocs={evidenceDocs}
@@ -241,7 +241,7 @@ export default function App() {
               </div>
 
               {/* Drive Evidence Vault */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <DriveEvidenceVault
                   evidenceDocs={evidenceDocs}
                   selectedDoc={selectedDoc}
@@ -253,7 +253,7 @@ export default function App() {
               </div>
 
               {/* Scam Anatomy & Legal Loophole Analysis */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <StartupLoopholeGuide
                   onExploreSocial={() => setActiveTab('social')}
                   onExploreBattle={() => setActiveTab('battle')}
@@ -262,7 +262,7 @@ export default function App() {
               </div>
 
               {/* Social Share Alert Toolkit */}
-              <div className="pt-6 border-t border-slate-200/80">
+              <div className="pt-6 border-t border-[#262626]">
                 <SocialShareToolkit />
               </div>
             </div>
