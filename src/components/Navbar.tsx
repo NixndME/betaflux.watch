@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   FolderOpen, 
-  Share2, 
   Scale, 
   Clock, 
   ShieldAlert, 
@@ -10,7 +9,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
-export type NavTabType = 'overview' | 'financial' | 'battle' | 'advisory' | 'drive' | 'timeline' | 'scam_anatomy' | 'social';
+export type NavTabType = 'overview' | 'financial' | 'battle' | 'advisory' | 'drive' | 'timeline' | 'scam_anatomy';
 
 interface NavbarProps {
   activeTab: NavTabType;
@@ -29,7 +28,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'drive', label: 'Evidence Vault', icon: <FolderOpen className="w-3.5 h-3.5" /> },
     { id: 'scam_anatomy', label: 'Legal Loopholes', icon: <Scale className="w-3.5 h-3.5" /> },
     { id: 'timeline', label: 'Timeline', icon: <Clock className="w-3.5 h-3.5" /> },
-    { id: 'social', label: 'Share Alert', icon: <Share2 className="w-3.5 h-3.5" /> },
   ];
 
   return (

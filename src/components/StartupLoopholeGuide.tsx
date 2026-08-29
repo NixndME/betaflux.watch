@@ -11,7 +11,6 @@ import {
   ExternalLink,
   BookOpen,
   FileText,
-  Share2,
   FileWarning,
   EyeOff,
   Flame,
@@ -22,13 +21,13 @@ import {
 } from 'lucide-react';
 
 interface StartupLoopholeGuideProps {
-  onExploreSocial: () => void;
+  onExploreAdvisory?: () => void;
   onExploreBattle: () => void;
   onExploreEvidence: () => void;
 }
 
 export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
-  onExploreSocial,
+  onExploreAdvisory,
   onExploreBattle,
   onExploreEvidence,
 }) => {
@@ -338,14 +337,14 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
 
             <div className="pt-4 flex flex-wrap items-center gap-3">
               <button
-                onClick={onExploreSocial}
-                className="px-5 py-2.5 text-xs font-bold rounded-xl bg-gradient-to-r from-red-600 to-[#FF3366] hover:from-red-500 hover:to-pink-500 text-white shadow-sm transition-colors"
+                onClick={onExploreAdvisory || onExploreBattle}
+                className="px-5 py-2.5 text-xs font-bold rounded-xl bg-gradient-to-r from-red-600 to-[#FF3366] hover:from-red-500 hover:to-pink-500 text-white shadow-sm transition-colors cursor-pointer"
               >
-                View Client &amp; Candidate Warning Toolkit →
+                View Client &amp; Candidate Warning Advisory →
               </button>
               <button
                 onClick={onExploreEvidence}
-                className="px-5 py-2.5 text-xs font-semibold rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-slate-200 border border-[#333] transition-colors"
+                className="px-5 py-2.5 text-xs font-semibold rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-slate-200 border border-[#333] transition-colors cursor-pointer"
               >
                 Inspect Primary Evidence Records →
               </button>

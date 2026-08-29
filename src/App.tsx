@@ -7,7 +7,6 @@ import { PublicAdvisoryWarning } from './components/PublicAdvisoryWarning';
 import { DriveEvidenceVault } from './components/DriveEvidenceVault';
 import { TimelineSection } from './components/TimelineSection';
 import { StartupLoopholeGuide } from './components/StartupLoopholeGuide';
-import { SocialShareToolkit } from './components/SocialShareToolkit';
 import { Footer } from './components/Footer';
 import { 
   CASE_EVIDENCE_DOCS, 
@@ -20,7 +19,6 @@ import {
   FolderOpen, 
   Scale, 
   Clock, 
-  Share2, 
   Flame, 
   ShieldAlert, 
   IndianRupee 
@@ -56,7 +54,6 @@ export default function App() {
           onExploreAdvisory={() => setActiveTab('advisory')}
           onExploreVault={() => setActiveTab('drive')}
           onExploreLegal={() => setActiveTab('scam_anatomy')}
-          onExploreSocial={() => setActiveTab('social')}
           totalEvidenceCount={evidenceDocs.length}
         />
 
@@ -141,17 +138,6 @@ export default function App() {
                 <Scale className="w-3.5 h-3.5" />
                 The Scam Anatomy
               </button>
-              <button
-                onClick={() => setActiveTab('social')}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-                  activeTab === 'social'
-                    ? 'bg-[#262626] text-white shadow-xs font-bold border border-slate-600/40'
-                    : 'text-slate-400 hover:text-white hover:bg-[#181818]'
-                }`}
-              >
-                <Share2 className="w-3.5 h-3.5" />
-                Share Warning
-              </button>
             </div>
           </div>
 
@@ -206,15 +192,10 @@ export default function App() {
               {/* Scam Anatomy & Legal Loophole Analysis */}
               <div className="pt-6 border-t border-[#262626]">
                 <StartupLoopholeGuide
-                  onExploreSocial={() => setActiveTab('social')}
+                  onExploreAdvisory={() => setActiveTab('advisory')}
                   onExploreBattle={() => setActiveTab('battle')}
                   onExploreEvidence={() => setActiveTab('drive')}
                 />
-              </div>
-
-              {/* Social Share Alert Toolkit */}
-              <div className="pt-6 border-t border-[#262626]">
-                <SocialShareToolkit />
               </div>
             </div>
           )}
@@ -280,17 +261,10 @@ export default function App() {
           {activeTab === 'scam_anatomy' && (
             <div className="animate-in fade-in duration-200">
               <StartupLoopholeGuide
-                onExploreSocial={() => setActiveTab('social')}
+                onExploreAdvisory={() => setActiveTab('advisory')}
                 onExploreBattle={() => setActiveTab('battle')}
                 onExploreEvidence={() => setActiveTab('drive')}
               />
-            </div>
-          )}
-
-          {/* TAB 8: SHARE WARNING ALERT */}
-          {activeTab === 'social' && (
-            <div className="animate-in fade-in duration-200">
-              <SocialShareToolkit />
             </div>
           )}
         </div>

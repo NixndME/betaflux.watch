@@ -2,20 +2,19 @@ import React from 'react';
 import { 
   ShieldCheck, 
   FolderOpen, 
-  Share2, 
   Flame, 
   ShieldAlert, 
   AlertTriangle, 
-  IndianRupee,
-  Scale,
-  FileSpreadsheet,
-  ArrowRight,
-  ExternalLink,
-  Lock,
-  Building2,
-  FileCheck2,
-  BadgeAlert,
-  Award
+  IndianRupee, 
+  Scale, 
+  FileSpreadsheet, 
+  ArrowRight, 
+  ExternalLink, 
+  Lock, 
+  Building2, 
+  FileCheck2, 
+  BadgeAlert, 
+  Award 
 } from 'lucide-react';
 import { CASE_FINANCIAL_SUMMARY } from '../data/caseData';
 
@@ -25,7 +24,6 @@ interface HeroBannerProps {
   onExploreAdvisory: () => void;
   onExploreVault: () => void;
   onExploreLegal: () => void;
-  onExploreSocial: () => void;
   totalEvidenceCount: number;
 }
 
@@ -35,7 +33,6 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   onExploreAdvisory,
   onExploreVault,
   onExploreLegal,
-  onExploreSocial,
   totalEvidenceCount,
 }) => {
   return (
@@ -184,15 +181,6 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           >
             <Scale className="w-4 h-4 text-[#FF3366]" />
             <span>Legal System Exploitation</span>
-          </button>
-
-          <button
-            id="hero-btn-social-kit"
-            onClick={onExploreSocial}
-            className="flex items-center gap-2 px-5 py-3.5 font-semibold text-sm bg-[#141414] border border-[#262626] text-slate-200 hover:bg-[#1E1E1E] hover:border-slate-600 rounded-xl shadow-sm transition-all"
-          >
-            <Share2 className="w-4 h-4 text-indigo-400" />
-            <span>Share Warning Kit</span>
           </button>
         </div>
 
