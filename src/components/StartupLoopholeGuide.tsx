@@ -202,6 +202,16 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
                   While civil courts move at glacial speed, companies deduct ₹14.58L on salary slips but remit only ₹3.89L to the Income Tax Department, pocketing the difference. Although Section 276B provides 3 months to 7 years rigorous imprisonment, formal enforcement requires relentless whistleblower action.
                 </p>
               </div>
+
+              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                  <Building className="w-4 h-4 text-[#FF3366]" />
+                  4. Ghost Corporate Addresses &amp; Vacated Offices (Section 12 Companies Act)
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Betaflux Consulting Private Limited (CIN: <span className="font-mono text-amber-400">U72900KA2018PTC115926</span>) vacated its physical registered office (Suite 204, 27th Main, HSR Layout, Sector 1, Bengaluru) in early 2024 without filing mandatory MCA Form INC-22. When legal notices or police summons arrive, postal envelopes return marked <em>"Left / Vacated"</em>, severely frustrating court service of process.
+                </p>
+              </div>
             </div>
           </div>
         )}

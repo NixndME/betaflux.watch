@@ -16,9 +16,6 @@ interface DriveEvidenceVaultProps {
   evidenceDocs: EvidenceDocument[];
   selectedDoc: EvidenceDocument | null;
   onSelectDoc: (doc: EvidenceDocument | null) => void;
-  onOpenRedactTool?: () => void;
-  isDriveConnected?: boolean;
-  onConnectDrive?: () => void;
 }
 
 export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
@@ -76,48 +73,20 @@ export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
   };
 
   return (
-    <div className="space-y-6" id="drive-vault-section">
-      {/* Header with Drive Sync Status */}
-      <div className="p-6 sm:p-8 bg-[#141414] border border-[#262626] rounded-2xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] border border-indigo-900/60 text-indigo-400 flex items-center justify-center font-bold">
-              <FolderOpen className="w-5 h-5 stroke-[2.5]" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-xl sm:text-2xl font-extrabold text-[#F8FAFC] tracking-tight">
-                  Primary Evidence &amp; Document Snippets
-                </h2>
-                <span className="font-mono text-xs bg-indigo-950/80 text-indigo-300 px-2.5 py-0.5 rounded-full border border-indigo-800/60 font-semibold">
-                  /betaflux
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
-                Inspect authentic contract clauses, WhatsApp admissions, zero-salary bank audits, and tax filings.
-              </p>
-            </div>
-          </div>
+    <div className="space-y-5" id="drive-vault-section">
+      {/* Clean Unboxed Section Header */}
+      <div className="space-y-1 pt-1">
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="text-xl font-black text-white tracking-tight">
+            Primary Evidence &amp; Document Snippets
+          </h2>
+          <span className="inline-flex items-center text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-md border border-emerald-800 font-semibold">
+            🛡️ Verified Primary Exhibits | PII Redacted
+          </span>
         </div>
-
-        {/* Static Status Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-xs font-semibold text-emerald-300 shadow-xs">
-          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span>Verified Primary Exhibits | PII Redacted</span>
-        </div>
-      </div>
-
-      {/* Authenticity & Safety Notice */}
-      <div className="p-4 sm:p-5 bg-[#181818] border border-[#262626] rounded-2xl flex items-start gap-3.5 text-xs text-slate-300">
-        <ShieldCheck className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-        <div className="space-y-0.5 leading-relaxed">
-          <strong className="font-bold text-[#F8FAFC] block text-sm">
-            Primary Document Integrity
-          </strong>
-          <p className="text-slate-400">
-            Every exhibit below represents verified primary documentation from the employment tenure with Betaflux. Private identifiers such as PAN numbers, residential addresses, and PF numbers are kept confidential to prevent harassment, while all financial figures, contract terms, and communications are shared openly and transparently.
-          </p>
-        </div>
+        <p className="text-xs text-slate-400">
+          Inspect authentic contract clauses, WhatsApp admissions, zero-salary bank audits, and tax filings.
+        </p>
       </div>
 
       {/* Filter and Search Controls */}
@@ -210,18 +179,29 @@ export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
 
                 {/* Key Takeaways Preview */}
                 <div className="space-y-1.5 pt-1">
-                  {doc.keyPoints.slice(0, 2).map((kp, idx) => (
+                  {doc.keyPoints.slice(0, 3).map((kp, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-1.5 shrink-0" />
-                      <span className="line-clamp-1">{kp}</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
+                      <span className="leading-snug">{kp}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Verbatim Snippet Preview if available */}
-                {doc.snippets && doc.snippets[0] && (
-                  <div className="p-2.5 bg-[#181818] border border-[#262626] rounded-xl text-[11px] text-slate-300 font-mono line-clamp-2 italic">
-                    "{doc.snippets[0]}"
+                {/* Verbatim Contract Snippet & Excerpt Box */}
+                {doc.snippets && doc.snippets.length > 0 && (
+                  <div className="p-3 bg-[#111111] border border-indigo-950/80 rounded-xl space-y-1.5">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-indigo-400">
+                      <Quote className="w-3 h-3 text-indigo-400" />
+                      <span>Verbatim Contract / Notice Excerpt:</span>
+                    </div>
+                    <div className="text-[11px] text-slate-300 font-mono leading-relaxed bg-[#161616] p-2 rounded-lg border border-[#222222]">
+                      "{doc.snippets[0]}"
+                    </div>
+                    {doc.snippets[1] && (
+                      <div className="text-[11px] text-slate-400 font-mono leading-relaxed bg-[#161616] p-2 rounded-lg border border-[#222222]">
+                        "{doc.snippets[1]}"
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -438,15 +418,10 @@ export const DriveEvidenceVault: React.FC<DriveEvidenceVaultProps> = ({
 
             {/* Modal Actions */}
             <div className="flex items-center justify-between gap-3 pt-4 border-t border-[#262626]">
-              <a
-                href={selectedDoc.driveViewLink || 'https://drive.google.com/drive/folders/betaflux'}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 hover:underline"
-              >
-                <span>Open in Drive Repository</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>Verified Primary Exhibit Record • PII Redacted</span>
+              </div>
 
               <div className="flex items-center gap-2">
                 <button

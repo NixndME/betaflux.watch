@@ -1,14 +1,12 @@
 import React from 'react';
-import { Shield, Lock, Scale, Heart, ExternalLink, Scissors, Flame, Building2, Users } from 'lucide-react';
+import { Shield, Lock, Scale, Heart, ExternalLink, Flame, Building2, Users } from 'lucide-react';
 
 interface FooterProps {
-  onOpenRedactModal: () => void;
   onExploreBattle: () => void;
   onExploreAdvisory: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onOpenRedactModal,
   onExploreBattle,
   onExploreAdvisory,
 }) => {
@@ -49,14 +47,6 @@ export const Footer: React.FC<FooterProps> = ({
               >
                 <Building2 className="w-3.5 h-3.5" />
                 Client Warning Notice
-              </button>
-              <span className="text-slate-700">•</span>
-              <button
-                onClick={onOpenRedactModal}
-                className="text-slate-300 hover:text-white hover:underline flex items-center gap-1 cursor-pointer"
-              >
-                <Scissors className="w-3.5 h-3.5 text-blue-400" />
-                Redact Screenshot Tool
               </button>
             </div>
           </div>

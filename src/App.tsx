@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar, NavTabType } from './components/Navbar';
 import { HeroBanner } from './components/HeroBanner';
 import { BattleStruggleChronicle } from './components/BattleStruggleChronicle';
@@ -8,7 +8,6 @@ import { DriveEvidenceVault } from './components/DriveEvidenceVault';
 import { TimelineSection } from './components/TimelineSection';
 import { StartupLoopholeGuide } from './components/StartupLoopholeGuide';
 import { SocialShareToolkit } from './components/SocialShareToolkit';
-import { RedactCanvasModal } from './components/RedactCanvasModal';
 import { Footer } from './components/Footer';
 import { 
   CASE_EVIDENCE_DOCS, 
@@ -16,7 +15,6 @@ import {
   STRUGGLE_CHAPTERS, 
   CASE_FINANCIAL_SUMMARY 
 } from './data/caseData';
-import { driveService } from './services/driveService';
 import { EvidenceDocument } from './types';
 import { 
   FolderOpen, 
@@ -33,46 +31,6 @@ export default function App() {
   const [evidenceDocs, setEvidenceDocs] = useState<EvidenceDocument[]>(CASE_EVIDENCE_DOCS);
   const [selectedDoc, setSelectedDoc] = useState<EvidenceDocument | null>(null);
 
-  const [isRedactModalOpen, setIsRedactModalOpen] = useState<boolean>(false);
-  const [isDriveConnected, setIsDriveConnected] = useState<boolean>(false);
-  const [isSyncingDrive, setIsSyncingDrive] = useState<boolean>(false);
-  const [driveFolderName, setDriveFolderName] = useState<string>('betaflux');
-
-  // Sync Google Drive client on load
-  useEffect(() => {
-    driveService.initializeGsiClient(undefined, async () => {
-      setIsDriveConnected(true);
-      await syncDriveFiles();
-    });
-  }, []);
-
-  const syncDriveFiles = async () => {
-    setIsSyncingDrive(true);
-    try {
-      const files = await driveService.fetchBetafluxFolderFiles(driveFolderName);
-      setEvidenceDocs(files);
-      setIsDriveConnected(true);
-    } catch (err) {
-      console.warn('Drive sync fallback:', err);
-    } finally {
-      setIsSyncingDrive(false);
-    }
-  };
-
-  const handleConnectDrive = async () => {
-    setIsSyncingDrive(true);
-    try {
-      await driveService.requestAccessToken();
-      await syncDriveFiles();
-    } catch (e) {
-      console.error(e);
-      setEvidenceDocs(CASE_EVIDENCE_DOCS);
-      setIsDriveConnected(true);
-    } finally {
-      setIsSyncingDrive(false);
-    }
-  };
-
   const handleSelectEvidenceFromTimeline = (docId: string) => {
     const found = evidenceDocs.find((d) => d.id === docId);
     if (found) {
@@ -87,10 +45,6 @@ export default function App() {
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        onOpenRedactModal={() => setIsRedactModalOpen(true)}
-        isDriveConnected={isDriveConnected}
-        onConnectDrive={handleConnectDrive}
-        isSyncingDrive={isSyncingDrive}
       />
 
       {/* Main Content Area */}
@@ -246,9 +200,6 @@ export default function App() {
                   evidenceDocs={evidenceDocs}
                   selectedDoc={selectedDoc}
                   onSelectDoc={setSelectedDoc}
-                  onOpenRedactTool={() => setIsRedactModalOpen(true)}
-                  isDriveConnected={isDriveConnected}
-                  onConnectDrive={handleConnectDrive}
                 />
               </div>
 
@@ -310,9 +261,6 @@ export default function App() {
                 evidenceDocs={evidenceDocs}
                 selectedDoc={selectedDoc}
                 onSelectDoc={setSelectedDoc}
-                onOpenRedactTool={() => setIsRedactModalOpen(true)}
-                isDriveConnected={isDriveConnected}
-                onConnectDrive={handleConnectDrive}
               />
             </div>
           )}
@@ -348,15 +296,8 @@ export default function App() {
         </div>
       </main>
 
-      {/* Redact Canvas Screenshot Tool Modal */}
-      <RedactCanvasModal
-        isOpen={isRedactModalOpen}
-        onClose={() => setIsRedactModalOpen(false)}
-      />
-
       {/* Footer */}
       <Footer
-        onOpenRedactModal={() => setIsRedactModalOpen(true)}
         onExploreBattle={() => setActiveTab('battle')}
         onExploreAdvisory={() => setActiveTab('advisory')}
       />

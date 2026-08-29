@@ -119,7 +119,7 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
           <div className="flex flex-wrap lg:flex-col items-start gap-2.5 shrink-0">
             <button
               onClick={handleDownloadSanitizedDossier}
-              className="flex items-center gap-2 px-5 py-3 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl shadow-sm active:scale-[0.98] transition-all"
+              className="flex items-center gap-2 px-5 py-3 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl shadow-sm active:scale-[0.98] transition-all cursor-pointer"
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
               <span>Download Due Diligence Dossier (.json)</span>
@@ -129,6 +129,67 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
               <span>Sanitized Evidence • Redacted Privacy Protection</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Corporate Governance Warning: Bogus / Vacated Registered Office Module */}
+      <div className="p-6 sm:p-7 bg-[#141414] border border-red-900/70 rounded-2xl shadow-xl space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#262626] pb-3.5">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-red-950 border border-red-800 text-[#FF3366] flex items-center justify-center font-bold">
+              <Building2 className="w-4 h-4" />
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                Corporate Governance Advisory: Bogus / Vacated Registered Office
+              </h3>
+              <span className="text-xs text-red-400 font-semibold">
+                Violation of Section 12, Companies Act, 2013 (Mandatory Form INC-22 Non-Compliance)
+              </span>
+            </div>
+          </div>
+          <span className="text-[11px] font-bold text-[#FF3366] bg-red-950/90 px-3 py-1 rounded-full border border-red-800 shrink-0 self-start sm:self-auto">
+            High Operational Risk
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
+          <div className="p-4 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Entity Details</span>
+            <div className="text-white font-bold text-sm">Betaflux Consulting Private Limited</div>
+            <div className="font-mono text-[11px] text-amber-400">CIN: U72900KA2018PTC115926</div>
+            <div className="font-mono text-[11px] text-slate-400">TAN: BLKB02482E</div>
+          </div>
+
+          <div className="p-4 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-red-400">Vacated Physical Address</span>
+            <div className="text-slate-200 font-semibold leading-relaxed">
+              No. 677, 1st Floor, Suite No. 204, 27th Main, 13th Cross, HSR Layout, Sector 1, Bengaluru - 560102
+            </div>
+            <div className="text-[11px] text-red-400 font-medium">
+              Physical premises vacated early 2024 without filing statutory MCA Form INC-22.
+            </div>
+          </div>
+
+          <div className="p-4 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Proof of Abandonment</span>
+            <div className="text-slate-300 leading-relaxed">
+              Legal notices and CCB police visits confirmed premises abandoned. Postal notices returned with official postal endorsement:
+            </div>
+            <div className="font-mono text-[11px] text-red-400 bg-red-950/60 p-1.5 rounded border border-red-900/60">
+              "Returned to Sender: Left / Vacated without forwarding address"
+            </div>
+          </div>
+        </div>
+
+        <div className="p-4 bg-[#181818] border border-amber-900/40 rounded-xl space-y-1.5 text-xs text-slate-300">
+          <div className="flex items-center gap-1.5 font-bold text-amber-400 text-xs">
+            <AlertOctagon className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>Severe Warning for Potential Clients &amp; Vendors:</span>
+          </div>
+          <p className="leading-relaxed text-slate-300">
+            Contracting with an entity operating without a physical, verified registered office creates extreme commercial risk. In the event of breach of contract, defective software delivery, or financial defaults, formal service of court summons, arbitral notices, or statutory tax claims cannot be physically executed at the registered location.
+          </p>
         </div>
       </div>
 
