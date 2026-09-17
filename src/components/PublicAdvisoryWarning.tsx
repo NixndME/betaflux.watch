@@ -197,16 +197,16 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
         <button
           onClick={() => setActiveAudience('customers')}
-          className={`p-5 text-left rounded-2xl border transition-all ${
+          className={`p-5 text-left rounded-2xl border transition-all cursor-pointer ${
             activeAudience === 'customers'
-              ? 'bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg shadow-black/50'
-              : 'bg-[#141414] border-[#262626] text-slate-400 hover:bg-[#1A1A1A] hover:border-slate-700'
+              ? 'bg-slate-100 dark:bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg'
+              : 'bg-white dark:bg-[#141414] border-slate-200 dark:border-[#262626] text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#1A1A1A] hover:border-slate-400 dark:hover:border-slate-700'
           }`}
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <Building2 className={`w-4 h-4 ${activeAudience === 'customers' ? 'text-[#FF3366]' : 'text-slate-500'}`} />
-              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'customers' ? 'text-white font-black' : 'text-slate-300'}`}>
+              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'customers' ? 'text-slate-900 dark:text-white font-black' : 'text-slate-700 dark:text-slate-300'}`}>
                 For Enterprise Clients &amp; Buyers
               </span>
             </div>
@@ -214,111 +214,111 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
               <span className="w-2 h-2 rounded-full bg-[#FF3366]" />
             )}
           </div>
-          <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
             Severe risk of sudden developer abandonment, IP ownership encumbrance, and unfiled registered office relocations.
           </p>
         </button>
 
         <button
           onClick={() => setActiveAudience('candidates')}
-          className={`p-5 text-left rounded-2xl border transition-all ${
+          className={`p-5 text-left rounded-2xl border transition-all cursor-pointer ${
             activeAudience === 'candidates'
-              ? 'bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg shadow-black/50'
-              : 'bg-[#141414] border-[#262626] text-slate-400 hover:bg-[#1A1A1A] hover:border-slate-700'
+              ? 'bg-slate-100 dark:bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg'
+              : 'bg-white dark:bg-[#141414] border-slate-200 dark:border-[#262626] text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#1A1A1A] hover:border-slate-400 dark:hover:border-slate-700'
           }`}
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <Users className={`w-4 h-4 ${activeAudience === 'candidates' ? 'text-amber-400' : 'text-slate-500'}`} />
-              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'candidates' ? 'text-white font-black' : 'text-slate-300'}`}>
+              <Users className={`w-4 h-4 ${activeAudience === 'candidates' ? 'text-amber-500' : 'text-slate-500'}`} />
+              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'candidates' ? 'text-slate-900 dark:text-white font-black' : 'text-slate-700 dark:text-slate-300'}`}>
                 For Job Seekers &amp; Tech Candidates
               </span>
             </div>
             {activeAudience === 'candidates' && (
-              <span className="w-2 h-2 rounded-full bg-amber-400" />
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
             )}
           </div>
-          <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
             Joining bonus baiting, fabricated 28-day LOP deductions, unremitted TDS theft, and unsigned document traps.
           </p>
         </button>
 
         <button
           onClick={() => setActiveAudience('vendors')}
-          className={`p-5 text-left rounded-2xl border transition-all ${
+          className={`p-5 text-left rounded-2xl border transition-all cursor-pointer ${
             activeAudience === 'vendors'
-              ? 'bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg shadow-black/50'
-              : 'bg-[#141414] border-[#262626] text-slate-400 hover:bg-[#1A1A1A] hover:border-slate-700'
+              ? 'bg-slate-100 dark:bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg'
+              : 'bg-white dark:bg-[#141414] border-slate-200 dark:border-[#262626] text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#1A1A1A] hover:border-slate-400 dark:hover:border-slate-700'
           }`}
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <Briefcase className={`w-4 h-4 ${activeAudience === 'vendors' ? 'text-indigo-400' : 'text-slate-500'}`} />
-              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'vendors' ? 'text-white font-black' : 'text-slate-300'}`}>
+              <Briefcase className={`w-4 h-4 ${activeAudience === 'vendors' ? 'text-indigo-500' : 'text-slate-500'}`} />
+              <span className={`text-xs font-bold tracking-tight ${activeAudience === 'vendors' ? 'text-slate-900 dark:text-white font-black' : 'text-slate-700 dark:text-slate-300'}`}>
                 For Freelancers &amp; Vendors
               </span>
             </div>
             {activeAudience === 'vendors' && (
-              <span className="w-2 h-2 rounded-full bg-indigo-400" />
+              <span className="w-2 h-2 rounded-full bg-indigo-500" />
             )}
           </div>
-          <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
             Invoice default patterns, asset withholding, and exploiting civil arbitration delay to avoid paying contractors.
           </p>
         </button>
       </div>
 
       {/* Advisory Content Cards */}
-      <div className="p-6 sm:p-8 bg-[#141414] border border-[#262626] rounded-2xl shadow-xl space-y-6">
+      <div className="p-6 sm:p-8 bg-white dark:bg-[#141414] border border-slate-200 dark:border-[#262626] rounded-2xl shadow-xl space-y-6">
         {activeAudience === 'customers' && (
           <div className="space-y-5">
-            <div className="flex items-center justify-between border-b border-[#262626] pb-3.5">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#262626] pb-3.5">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-[#FF3366]" />
                 Critical Commercial Risks When Contracting Software Development
               </h3>
-              <span className="text-xs font-bold text-[#FF3366] bg-red-950 px-2.5 py-1 rounded-md border border-red-800">
+              <span className="text-xs font-bold text-[#FF3366] bg-red-100 dark:bg-red-950 px-2.5 py-1 rounded-md border border-red-300 dark:border-red-800">
                 Enterprise Caution Alert
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#FF3366]">
                   <AlertOctagon className="w-4 h-4 text-[#FF3366]" />
                   <span>1. Core Developers Forced Out Due to Wage Theft</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Betaflux withholds monthly compensation for months (issued ₹0 salary credits for 6 consecutive months to key engineering leadership). When unpaid engineers inevitably resign, client production codebases are left abandoned without handover.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#FF3366]">
                   <AlertOctagon className="w-4 h-4 text-[#FF3366]" />
                   <span>2. Intellectual Property &amp; Copyright Clouds</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Under Indian and international copyright jurisprudence, intellectual property created under conditions of fundamental material breach (non-payment of wages) can trigger legal encumbrance and contested ownership over software delivered to clients.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#FF3366]">
                   <AlertOctagon className="w-4 h-4 text-[#FF3366]" />
                   <span>3. Statutory Tax &amp; Bank Freeze Jeopardy</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   With active Section 276B criminal warning notices from Income Tax Ward 1(1) (#16942293) and ₹57.26L civil claims, the company risks statutory asset attachments, placing client advances and project escrow in legal peril.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#FF3366]">
                   <AlertOctagon className="w-4 h-4 text-[#FF3366]" />
                   <span>4. Unregistered Entities &amp; Vacated Offices</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Betaflux operates unregistered brand fronts (e.g. Haven App at havenapp.co) and vacated its physical HSR Layout corporate office without mandatory MCA Form INC-22 filings, complicating legal service and warranty fulfillment.
                 </p>
               </div>
@@ -328,53 +328,53 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
 
         {activeAudience === 'candidates' && (
           <div className="space-y-5">
-            <div className="flex items-center justify-between border-b border-[#262626] pb-3.5">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <Users className="w-5 h-5 text-amber-400" />
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#262626] pb-3.5">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <Users className="w-5 h-5 text-amber-500" />
                 Job Seeker Due Diligence: Red Flags &amp; Protection Checklist
               </h3>
-              <span className="text-xs font-bold text-amber-400 bg-amber-950 px-2.5 py-1 rounded-md border border-amber-800">
+              <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2.5 py-1 rounded-md border border-amber-300 dark:border-amber-800">
                 Candidate Warning
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
-                  <CheckSquare className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400">
+                  <CheckSquare className="w-4 h-4 text-amber-500" />
                   <span>1. Promised Joining Bonus &amp; CTC Manipulation</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Betaflux commits high CTC (₹90 LPA CTC / ₹80L base + ₹10L bonus) on formal letters to induce candidate resignation from stable jobs. Once onboarded, bonus payouts are withheld and monthly salaries abruptly defaulted.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
-                  <CheckSquare className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400">
+                  <CheckSquare className="w-4 h-4 text-amber-500" />
                   <span>2. Fabricated Loss of Pay (LOP) Deductions</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Watch your monthly payslips. Betaflux marked 28 days fake "Loss of Pay" on November 2023 payslips to slash compensation from ₹6.66L to ₹1.8L despite 100% active attendance.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
-                  <CheckSquare className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400">
+                  <CheckSquare className="w-4 h-4 text-amber-500" />
                   <span>3. Check Form 26AS for Unremitted TDS</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   They deduct statutory TDS on monthly payslips to make payroll look compliant, but pocket the funds rather than remitting them to the Income Tax Department (violating Section 276B).
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
-                  <CheckSquare className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400">
+                  <CheckSquare className="w-4 h-4 text-amber-500" />
                   <span>4. Beware One-Sided Unsigned Document Traps</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   If management pressures you to sign any settlement waiver or NDA with the promise of clearing pending salary arrears, note that they keep your signed copy, refuse to sign it themselves, and withhold payment.
                 </p>
               </div>
@@ -384,33 +384,33 @@ export const PublicAdvisoryWarning: React.FC<PublicAdvisoryWarningProps> = ({
 
         {activeAudience === 'vendors' && (
           <div className="space-y-5">
-            <div className="flex items-center justify-between border-b border-[#262626] pb-3.5">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-indigo-400" />
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#262626] pb-3.5">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <Briefcase className="w-5 h-5 text-indigo-500" />
                 Vendor &amp; Contractor Risk Mitigation Protocol
               </h3>
-              <span className="text-xs font-bold text-indigo-400 bg-indigo-950 px-2.5 py-1 rounded-md border border-indigo-800">
+              <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-950 px-2.5 py-1 rounded-md border border-indigo-300 dark:border-indigo-800">
                 Payment Caution
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-indigo-400">
-                  <CheckSquare className="w-4 h-4 text-indigo-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                  <CheckSquare className="w-4 h-4 text-indigo-500" />
                   <span>1. Mandate 100% Upfront or Escrow Disbursements</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Never provide cloud architecture, design assets, or custom coding on Net-30/Net-60 terms. Invoices are routinely ignored once deliverables are merged.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-indigo-400">
-                  <CheckSquare className="w-4 h-4 text-indigo-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                  <CheckSquare className="w-4 h-4 text-indigo-500" />
                   <span>2. Retain Source Code &amp; Infrastructure Keys</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Do not hand over root AWS/GCP administrative credentials, DNS records, or production repositories until all milestone invoices clear into your bank account.
                 </p>
               </div>

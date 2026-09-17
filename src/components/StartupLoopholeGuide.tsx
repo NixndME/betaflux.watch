@@ -78,15 +78,15 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
             <button
               key={mod.id}
               onClick={() => setSelectedModule(mod.id as any)}
-              className={`p-4 rounded-xl border text-left transition-all ${
+              className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
                 isActive
-                  ? 'bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg'
-                  : 'bg-[#141414] border-[#262626] text-slate-400 hover:bg-[#1A1A1A] hover:border-slate-700'
+                  ? 'bg-slate-100 dark:bg-[#181818] border-[#FF3366] ring-1 ring-[#FF3366]/40 shadow-lg'
+                  : 'bg-white dark:bg-[#141414] border-slate-200 dark:border-[#262626] text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#1A1A1A] hover:border-slate-400 dark:hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-2 mb-1">
                 <Icon className={`w-4 h-4 ${isActive ? 'text-[#FF3366]' : 'text-slate-500'}`} />
-                <span className={`text-xs font-bold ${isActive ? 'text-white font-black' : 'text-slate-300'}`}>
+                <span className={`text-xs font-bold ${isActive ? 'text-slate-900 dark:text-white font-black' : 'text-slate-700 dark:text-slate-300'}`}>
                   {mod.title}
                 </span>
               </div>
@@ -96,59 +96,59 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
       </div>
 
       {/* Module Content */}
-      <div className="p-6 sm:p-8 bg-[#141414] border border-[#262626] rounded-2xl shadow-xl space-y-6">
+      <div className="p-6 sm:p-8 bg-white dark:bg-[#141414] border border-slate-200 dark:border-[#262626] rounded-2xl shadow-xl space-y-6">
         {/* Module 1: The Loophole Exploit */}
         {selectedModule === 'loophole' && (
           <div className="space-y-6">
-            <div className="border-b border-[#262626] pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#FF3366] bg-red-950/80 px-2.5 py-1 rounded-md border border-red-800">
+            <div className="border-b border-slate-200 dark:border-[#262626] pb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FF3366] bg-red-100 dark:bg-red-950/80 px-2.5 py-1 rounded-md border border-red-300 dark:border-red-800">
                 Pattern Analysis
               </span>
-              <h3 className="text-xl font-black text-white mt-2">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mt-2">
                 The 4-Stage Corporate Scam Playbook
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
                 How certified corporate scammers plan with legal guidance to extract talent, time, and money without paying what was contractually promised:
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white">Stage 1: The Hiring Bait &amp; ₹90L CTC Promise</span>
-                  <span className="text-[10px] font-bold text-amber-400 bg-amber-950 px-2 py-0.5 rounded border border-amber-800">Onboarding</span>
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Stage 1: The Hiring Bait &amp; ₹90L CTC Promise</span>
+                  <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded border border-amber-300 dark:border-amber-800">Onboarding</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   They commit competitive salaries (₹80L base + ₹10L bonus at ₹90 LPA CTC) and upfront joining bonuses in formal offer contracts to induce resignation from stable companies. Once the employee joins, bonus payouts are indefinitely delayed and salary payments stopped.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white">Stage 2: 12-16 Hr Workdays &amp; Unpaid Architecture Delivery</span>
-                  <span className="text-[10px] font-bold text-amber-400 bg-amber-950 px-2 py-0.5 rounded border border-amber-800">Month 2 - 4</span>
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Stage 2: 12-16 Hr Workdays &amp; Unpaid Architecture Delivery</span>
+                  <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded border border-amber-300 dark:border-amber-800">Month 2 - 4</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Monthly salaries are frozen while leadership extracts mission-critical cloud architectures, DevOps automation verticals, and key client milestones under constant verbal reassurances that <em>"all pending dues will be cleared next week."</em>
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white">Stage 3: The Deceptive Document Trap &amp; 28-Day LOP</span>
-                  <span className="text-[10px] font-bold text-[#FF3366] bg-red-950 px-2 py-0.5 rounded border border-red-800">Crisis Point</span>
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Stage 3: The Deceptive Document Trap &amp; 28-Day LOP</span>
+                  <span className="text-[10px] font-bold text-[#FF3366] bg-red-100 dark:bg-red-950 px-2 py-0.5 rounded border border-red-300 dark:border-red-800">Crisis Point</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Management fabricates 28 days fake "Loss of Pay" on November 2023 payslips to slash salary, then pressures the employee to sign settlement declarations under false promises of salary release while management deliberately refuses to countersign.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white">Stage 4: The "Civil Dispute" Shield &amp; 5-8 Year Delay</span>
-                  <span className="text-[10px] font-bold text-[#FF3366] bg-red-950 px-2 py-0.5 rounded border border-red-800">Exit &amp; Retaliation</span>
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Stage 4: The "Civil Dispute" Shield &amp; 5-8 Year Delay</span>
+                  <span className="text-[10px] font-bold text-[#FF3366] bg-red-100 dark:bg-red-950 px-2 py-0.5 rounded border border-red-300 dark:border-red-800">Exit &amp; Retaliation</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Promoters weaponize background verification and tell unpaid staff: <em>"Go file a civil suit; police won't touch employment matters."</em> They exploit 5-8 year civil court backlogs while knowing the employee faces immediate financial ruin.
                 </p>
               </div>
@@ -159,56 +159,56 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
         {/* Module 2: The Legal System Blindspot */}
         {selectedModule === 'legal_blindspot' && (
           <div className="space-y-6">
-            <div className="border-b border-[#262626] pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-800">
+            <div className="border-b border-slate-200 dark:border-[#262626] pb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-300 dark:border-amber-800">
                 Systemic Flaws
               </span>
-              <h3 className="text-xl font-black text-white mt-2">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mt-2">
                 Why the Legal System Fails to See the Full Picture
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
                 How corporate entities use legal loopholes to fragment premeditated fraud into isolated contractual technicalities:
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <Gavel className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Gavel className="w-4 h-4 text-amber-500" />
                   1. The "Civil Dispute" Dismissal Loophole
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   When a victimized professional approaches police after months of unpaid labor, authorities routinely categorize it as: <em>"This is a contractual employer-employee civil dispute, go to civil court."</em> This ignores the criminal mens rea (premeditated fraudulent inducement under Sec 406/420 IPC) and allows serial wage thieves to operate unchecked.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <Landmark className="w-4 h-4 text-amber-400" />
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Landmark className="w-4 h-4 text-amber-500" />
                   2. Asymmetry of Resources &amp; 5-8 Year Court Timelines
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   A multi-year commercial civil suit costs lakhs in legal counsel and court fees. Corporate founders use enterprise revenues to hire lawyers who file repeated adjournment applications, knowing the unpaid engineer faces personal loan defaults, EMIs, and severe financial distress.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-[#FF3366]" />
                   3. Ignored Tax Non-Compliance (TDS Section 276B)
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   While civil courts move at glacial speed, companies deduct ₹14.58L on salary slips but remit only ₹3.89L to the Income Tax Department, pocketing the difference. Although Section 276B provides 3 months to 7 years rigorous imprisonment, formal enforcement requires relentless whistleblower action.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Building className="w-4 h-4 text-[#FF3366]" />
                   4. Ghost Corporate Addresses &amp; Vacated Offices (Section 12 Companies Act)
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Betaflux Consulting Private Limited (CIN: <span className="font-mono text-amber-400">U72900KA2018PTC115926</span>) vacated its physical registered office (Suite 204, 27th Main, HSR Layout, Sector 1, Bengaluru) in early 2024 without filing mandatory MCA Form INC-22. When legal notices or police summons arrive, postal envelopes return marked <em>"Left / Vacated"</em>, severely frustrating court service of process.
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Betaflux Consulting Private Limited (CIN: <span className="font-mono text-amber-600 dark:text-amber-400 font-bold">U72900KA2018PTC115926</span>) vacated its physical registered office (Suite 204, 27th Main, HSR Layout, Sector 1, Bengaluru) in early 2024 without filing mandatory MCA Form INC-22. When legal notices or police summons arrive, postal envelopes return marked <em>"Left / Vacated"</em>, severely frustrating court service of process.
                 </p>
               </div>
             </div>
@@ -218,72 +218,72 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
         {/* Module 3: Promoter Myths vs Law */}
         {selectedModule === 'myths' && (
           <div className="space-y-6">
-            <div className="border-b border-[#262626] pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-800">
+            <div className="border-b border-slate-200 dark:border-[#262626] pb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-300 dark:border-amber-800">
                 Deceptions Debunked
               </span>
-              <h3 className="text-xl font-black text-white mt-2">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mt-2">
                 Corporate Scammer Excuses vs. Legal Reality
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="text-xs font-bold text-[#FF3366] uppercase tracking-wider">
                   ❌ Promoter Falsehood:
                 </div>
-                <p className="text-xs font-semibold text-white italic">
+                <p className="text-xs font-semibold text-slate-900 dark:text-white italic">
                   "We promised to clear dues verbally, but we can't pay joining bonuses now."
                 </p>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider pt-2 border-t border-[#262626]">
+                <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider pt-2 border-t border-slate-200 dark:border-[#262626]">
                   ✓ Legal Reality:
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Offer letters and signed appointment contracts are legally binding instruments under the Indian Contract Act. Unilateral repudiation of promised joining bonuses constitutes a fundamental breach of contract and actionable fraud.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="text-xs font-bold text-[#FF3366] uppercase tracking-wider">
                   ❌ Promoter Falsehood:
                 </div>
-                <p className="text-xs font-semibold text-white italic">
+                <p className="text-xs font-semibold text-slate-900 dark:text-white italic">
                   "You signed a paper, so your salary and bonus are settled even if we didn't sign."
                 </p>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider pt-2 border-t border-[#262626]">
+                <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider pt-2 border-t border-slate-200 dark:border-[#262626]">
                   ✓ Legal Reality:
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   A one-sided document where management extracted an employee's signature under false representations of immediate payment, and deliberately withheld their own signature while keeping the funds, is void for lack of consideration and tainted by fraudulent inducement.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-[#FF3366] uppercase tracking-wider">
                   ❌ Promoter Falsehood:
                 </div>
-                <p className="text-xs font-semibold text-white italic">
+                <p className="text-xs font-semibold text-slate-900 dark:text-white italic">
                   "If you talk to our clients or post online, we will sue you for defamation."
                 </p>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider pt-2 border-t border-[#262626]">
+                <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider pt-2 border-t border-slate-200 dark:border-[#262626]">
                   ✓ Legal Reality:
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Truthful publication supported by documentary proof (contracts, bank statements showing ₹0 pay, Form 26AS mismatch) for public due diligence is protected under Exception 1 to Section 499 IPC / Section 356 BNS and Article 19(1)(a).
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-red-900/60 rounded-xl space-y-2">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-red-300 dark:border-red-900/60 rounded-xl space-y-2">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-[#FF3366] uppercase tracking-wider">
                   ❌ Promoter Falsehood:
                 </div>
-                <p className="text-xs font-semibold text-white italic">
+                <p className="text-xs font-semibold text-slate-900 dark:text-white italic">
                   "No Relieving Letter unless you waive all your pending salary and bonus."
                 </p>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider pt-2 border-t border-[#262626]">
+                <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider pt-2 border-t border-slate-200 dark:border-[#262626]">
                   ✓ Legal Reality:
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   High Courts have established that experience credentials cannot be used as bargaining chips to extort employees into waiving earned compensation.
                 </p>
               </div>
@@ -294,42 +294,42 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
         {/* Module 4: Public Truth & Accountability */}
         {selectedModule === 'accountability' && (
           <div className="space-y-6">
-            <div className="border-b border-[#262626] pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-800">
+            <div className="border-b border-slate-200 dark:border-[#262626] pb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-300 dark:border-amber-800">
                 The Public Cause
               </span>
-              <h3 className="text-xl font-black text-white mt-2">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mt-2">
                 Why Public Exposure is the Only Real Shield Against Certified Scammers
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
                 When legal loopholes allow bad actors to hide, public truth and community awareness ensure they cannot easily prey on new victims:
               </p>
             </div>
 
             <div className="space-y-3">
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white">
                   1. Protecting Prospective Clients from Project Disasters
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   When clients see how Betaflux treats their core engineering team and misappropriates funds, they think twice before handing over critical software roadmaps and advance retainers.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white">
                   2. Warning Developers Before They Sign Offer Letters
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   Engineers will know the truth behind the fake joining bonus promises and salary stoppage patterns, saving them from debt, stress, and career disruption.
                 </p>
               </div>
 
-              <div className="p-5 bg-[#181818] border border-[#262626] rounded-xl space-y-2">
-                <h4 className="text-sm font-bold text-white">
+              <div className="p-5 bg-slate-50 dark:bg-[#181818] border border-slate-200 dark:border-[#262626] rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white">
                   3. Creating Irreversible Reputational Accountability
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   They may hide behind the slow civil courts, but they cannot hide from verified, factual public records that document their exact conduct.
                 </p>
               </div>
@@ -344,7 +344,7 @@ export const StartupLoopholeGuide: React.FC<StartupLoopholeGuideProps> = ({
               </button>
               <button
                 onClick={onExploreEvidence}
-                className="px-5 py-2.5 text-xs font-semibold rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-slate-200 border border-[#333] transition-colors cursor-pointer"
+                className="px-5 py-2.5 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-[#1C1C1C] hover:bg-slate-200 dark:hover:bg-[#262626] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-[#333] transition-colors cursor-pointer"
               >
                 Inspect Primary Evidence Records →
               </button>
